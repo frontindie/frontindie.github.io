@@ -4,7 +4,7 @@
 </head>
 <body>
   <h2>test</h2>
-  <a href="exitrealtyconnect://--/listing-details">Go to exit realty connect app</a>
+  <a id="standalone-id">Go to exit realty connect app</a>
   <a id="dev-id">Go to dev</a>
   <script>
     const params = {
@@ -14,9 +14,11 @@
     }
 
     const devAnchor = document.getElementById('dev-id');
-    const url = `exp://192.168.1.26:19000/--/listing-details?params=${JSON.stringify(params)}`;
-
-    devAnchor.href = url;
+    const standaloneAnchor = document.getElementById('standalone-id')
+    const devUrl = `exp://192.168.1.26:19000/--/listing-details?params=${JSON.stringify(params)}`;
+    const standaloneUrl = `exitrealtyconnect://--/listing-details?params=${JSON.stringify(params)}`
+    devAnchor.href = devUrl;
+    standaloneAnchor.href = standaloneUrl;
   </script>
   </body>
 </html>
